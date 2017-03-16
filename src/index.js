@@ -57,7 +57,7 @@ function withMethod(method) {
 
     var m, messages = [], updates;
 
-    while(m = store.wt.pop()) {
+    while((m = store.wt.pop())) {
       try {
         messages.push({
           id: uuid(),
@@ -90,7 +90,7 @@ function withMethod(method) {
 
       session.submit_sm({ destination_addr: m.to, short_message: m.content },
           function(pdu) {
-            if (pdu.command_status == 0) {
+            if (pdu.command_status === 0) {
               log('Send succesful.  Message ID: ' + pdu.message_id);
               var timestamp = new Date();
               store.unsynched_statuses.push({ id:m.id, status:'SENT' });
@@ -111,7 +111,7 @@ function withMethod(method) {
       if(err || resp.statusCode >= 300) return;
       processApiResponse(body);
     });
-  }
+  };
 }());
 
 (function SMPP_SETUP() {
@@ -121,7 +121,7 @@ function withMethod(method) {
       password: conf.password,
   }, function(pdu) {
       log('Bound.  PDU: ' + JSON.stringify(pdu));
-      if (pdu.command_status == 0) {
+      if (pdu.command_status === 0) {
           log('Bind successful.');
   
           log('Starting medic-api poller...');
