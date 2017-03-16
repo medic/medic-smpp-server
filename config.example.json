@@ -8,5 +8,9 @@
   "test": {
     "send_message": false,
     "destination": ""
+  },
+  "medic_api": {
+    "url": "",
+    "poll_interval": 30
   }
 }
