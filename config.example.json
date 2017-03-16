@@ -6,7 +6,7 @@
   "username": "",
   "password": "",
   "test": {
-    "destination": "",
-    "content": ""
+    "send_message": false,
+    "destination": ""
   }
 }
