@@ -1,0 +1,12 @@
+{
+  "server": {
+    "host": "",
+    "port": 0
+  },
+  "username": "",
+  "password": "",
+  "test": {
+    "destination": "",
+    "content": ""
+  }
+}
