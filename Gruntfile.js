@@ -8,6 +8,7 @@ module.exports = function(grunt) {
     jshint: {
       src: ['src/**/*.js', 'test/**/*.js', '/*.json'],
       options: {
+        esversion: 6,
         undef: true,
         unused: true,
         predef: ['console', 'module', 'process', 'require', 'setInterval'],

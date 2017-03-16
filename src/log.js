@@ -1,5 +1,4 @@
-function log() {
-  var args = Array.prototype.slice.call(arguments);
+function log(...args) {
   args.unshift("LOG");
   console.log.call(console.log, args.join(' '));
 }
